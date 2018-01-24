@@ -1,0 +1,122 @@
+
+
+.mainContent{
+    display: flex;
+}
+
+.userListWrapper {
+    background-color: #2A2845;
+    color: #fff;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    flex: 1;
+    order: 1;
+    padding:20px 0px 40px 30px;
+    border-right: 1px solid #222;
+}
+.picture {
+height: 630px;
+
+}
+.feedWrapper {
+    background-color: #fff;
+    background: 
+     linear-gradient(181deg, rgba(100, 232, 255, 0.6), rgba(0, 0, 0, 0.9));
+    //  url('/assets/img/rashan.jpg') center center no-repeat;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    flex: 5;
+    order: 2;
+    overflow-y: scroll;
+    padding:20px 0px 0px 24px;
+}
+
+.chatFormWrapper {
+    display: flex;
+    height: 50px;
+    background-color: #eee;
+    z-index: 3;
+}
+
+#scroll-style::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+app-user-list {
+    width: 100%;
+}
+
+
+
+
+
+body {
+    width: 100%;
+    min-height:100%;
+    background: #eee;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: "Open Sans", sans-serif;
+}
+
+app-chatroom {
+    display: flex;
+    flex-direction: column;
+}
+
+app-navbar{
+    width: 100%;
+}
+
+app-chat-form{
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow: none;
+}
+
+.message {
+  display: block;
+  height: auto;
+}
+.my-card{
+background-color: #0a0a0a;
+
+float:right;
+}
+.inputclass{
+
+margin-top: 50px;
+
+}
+.profilepic{
+    
+            height: 30px;
+            width: 30px;
+            }
+
+
+.memberName{
+
+    margin-left: 5px;
+}
+
+div.wrapp:hover{
+        height: 50px;
+       
+        background-color: rgb(35, 202, 214);
+    
+    }
+.wrapp{
+
+background-color: rgb(151, 144, 144)
+
+}
+.AddButton{
+
+margin-top: 40px;
+
+}

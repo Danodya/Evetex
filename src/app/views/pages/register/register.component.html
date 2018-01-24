@@ -1,0 +1,191 @@
+
+<div class="app flex-row align-items-center wrapp" src="assets/img/avatars/6.jpg">
+  <div class="container">
+   
+
+    <div class="row justify-content-center">
+      <div class="col-md-7" style="opacity:0.8">
+        <div class="card mx-4">
+          <div class="card-body p-4 inwrapp">
+            <h1 style ="text-align:center">Register</h1>
+       
+           <strong> Select Type of user</strong>
+            <div class="row">
+                <div class="col-sm-4">
+                   <div class="radio radio-danger">
+                      <label class="radio-inline ">
+                   <input type="radio" (click) ="isOrganizer()"name="usertype" id="Radios1" value="Organizer"><strong> Organizer</strong>
+                      </label>
+                   </div>
+                </div>
+  
+               
+                <div class="col-sm-4">
+                   <div class="radio radio-danger">
+                      <label class="radio-inline ">
+                   <input type="radio" (click) ="isSpProvider()" name="usertype" id="Radios1" value="Yes" > <strong> service provider</strong> 
+                  </label>
+                   </div>
+                </div>
+  
+                <div class="col-sm-4">
+                    <div class="radio radio-danger">
+                        <label class="radio-inline ">
+                     <input type="radio" (click)="isAdmin()" name="usertype" id="Radios1" value="Yes" ><strong> Admin</strong>
+                        </label>
+                     </div>
+                  </div>
+                </div>
+
+                
+                <div *ngIf ="registeruser.usertype =='service_provider'? true : false">
+                    <div class ="jumbotron">
+                      
+                    <div class ="row" >
+                    <div class ="input-group col-md-6">
+                        <span class="input-group-addon"><i class="fa fa-university" aria-hidden="true"></i></span>
+                      <input type="text" class ="form-controle" [(ngModel)]="registeruser.spCatagory" #serviceCatogory="ngModel" placeholder="enter accout number" required>
+                      
+
+                    </div>
+                    <div class ="input-group col-md-6">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger btn-lg btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Submit
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Photographer</a>
+                              <a class="dropdown-item" href="#">Dj</a>
+                              <a class="dropdown-item" href="#">Hotel</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                          </div>  
+
+                      </div>
+                    
+                  </div>
+                 </div>
+
+                 <div *ngIf="serviceCatogory.invalid && (serviceCatogory.dirty || serviceCatogory.touched)"
+                 class="alert alert1 alert-danger">
+   
+                 <div *ngIf="serviceCatogory.errors.required">
+                   AccountNumber required.
+                 </div>
+               </div>
+                </div>
+          
+
+            <div class="input-group mb-3">
+              <span class="input-group-addon"><i class="icon-user"></i></span>
+              <input type="text" id ="firstname" [(ngModel)]="registeruser.firstname" name ="firstname" #firstname="ngModel"class="form-control" placeholder="firstname" required>
+    
+            </div>
+            <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+            class="alert alert-danger">
+
+            <div *ngIf="firstname.errors.required">
+              Name is required.
+            </div>
+          </div>
+
+
+
+
+            
+            <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input type="text" [(ngModel)]="registeruser.lastname" class="form-control" #lastname="ngModel" placeholder="lastname" required>
+              </div>
+              <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+              class="alert alert-danger">
+
+              <div *ngIf="lastname.errors.required">
+                lastname is required.
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input type="text" [(ngModel)]="registeruser.username" class="form-control" #username="ngModel" placeholder="user name" required>
+              </div>
+
+              <div *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="alert alert-danger">
+
+              <div *ngIf="username.errors.required">
+                username is required.
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-addon">@</span>
+              <input type="email" [(ngModel)]="registeruser.email" #email="ngModel" class="form-control" placeholder="Email" required>
+            </div>
+
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert alert-danger">
+              <div *ngIf="email.errors.required">
+              email is required.
+              </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="isvaliedemail">Invalid email.Try Again</div>
+            <div class="input-group mb-3">
+              <span class="input-group-addon"><i class="icon-lock"></i></span>
+              <input type="password" [(ngModel)]="registeruser.password" class="form-control" #password ="ngModel"placeholder="Password" required>
+            </div>
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+                password is required.
+            </div>
+          </div>
+
+
+            <div class="input-group mb-4">
+              <span class="input-group-addon"><i class="icon-lock"></i></span>
+              <input type="password" [(ngModel)]="registeruser.confirmpassword"  #confirmpassword ="ngModel"class="form-control" placeholder="Repeat password" required>
+            </div>
+
+            <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)"
+            class="alert alert-danger">
+            <div *ngIf="confirmpassword.errors.required">
+                confirmpassword is required.
+            </div>
+          </div>
+         <div *ngIf ="registeruser.usertype=='service_provider'?true:false">
+
+       
+         </div>
+
+            <button type="button" (click)="register()"class="btn btn-block btn-success">Create Account</button>
+            
+          <div class="card-footer p-3">
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-block btn-facebook" type="button"><span>facebook</span></button>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-block btn-twitter" type="button"><span>twitter</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-danger" *ngIf="isfilled">some  fields are not fill. Try Again...</div>
+          <div class="alert alert-danger" *ngIf="!ispasswordMatch">password are not maching. Try Again...</div>
+          <div class="alert alert-danger" *ngIf="isServiceCatogory">please enter service provider category</div>
+          <div class="alert alert-danger" *ngIf="isusertype">please enter usertype</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,300 @@
+// IE10&11 Flexbox fix
+@media all and (-ms-high-contrast:none) {
+  html {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// app-dashboard and app-root are Angular2+ selectors. You can add here your own selectors if you need.
+.app,
+app-dashboard,
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  flex: 0 0 50px;
+}
+.abc{
+  background-color: rgb(0, 0, 0);
+}
+  .main {
+    flex: 1;
+    width: 100;
+    height:100;
+    min-width: 0;
+    background-image: url(fgh.jpg);
+    //opacity:0.5;
+  }
+
+  .app-footer {
+    flex: 0 0 00px;
+    color: rgb(255, 255, 255);
+    position:absolute;
+    //top:135px;
+    top:705px;
+    height:77px;
+    background-color: rgb(0, 0, 0);
+  }
+  /*.panel-footer{
+    //flex: 1000 10 100px;
+    color:rgb(255, 255, 255);
+    height:77px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }*/
+
+
+.app-header.navbar {
+  position: relative;
+  flex-direction:column;
+  height: 500px;
+  //width: 500px;
+  padding:35px;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+ border:0px;
+
+
+
+
+ .nav-item {
+  position: relative;
+  min-width: 0px;
+  margin: 0 !important;
+  text-align: center;
+/*
+  .nav ul {
+    list-style: none;
+    background-color: #080707;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #0F0B0B;
+  }
+   
+  .nav a {
+    text-decoration: none;
+    color: #998E8E;
+    display: block;
+    transition: .3s background-color;
+  }
+  
+  .nav a:hover {
+    background-color: #092727;
+  }
+   
+  .nav a.active {
+    background-color: #D38585;
+    color: #2B2020;
+    cursor: default;
+  }*/
+
+  .nav-link {
+    padding-top: 100;
+    padding-bottom: 100;
+    background:0;
+    border: 10;
+    //box-sizing:content-box;
+    .badge {
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      margin-top: 16px;
+      margin-left: 0;
+      background: yellowgreen;
+    }/*
+    > .img-avatar {
+      height: 250px - 20px;
+      margin: 0 10px;
+    }*/
+  }
+}
+}
+/* 
+.navbar-nav {
+width: 200;
+flex-direction: row;
+align-items: center;
+height:75px;
+padding-bottom:500px; 
+padding-top:500px; 
+padding-right:500px; 
+padding-left:500px; 
+  .nav-link {
+    color:tomato;
+
+  }
+
+}
+.navbar-divider {
+  background-color: rgba(163, 136, 136, 0.08);
+}
+
+
+ .nav-tabs {
+  .nav-link {
+    color:gray;
+    &.active {
+      color: #AA7676;
+      background: rgb(43, 3, 3);
+      border-color: peru;
+      border-bottom-color: rgb(218, 25, 25);
+      &:focus {
+        background: rgb(199, 25, 25);
+        border-color: red;
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}
+
+.tab-content {
+  margin-top: 10px;
+  background: rgb(100, 62, 62);
+  border: 1px solid green;
+  .tab-pane {
+    padding:50px;
+  }
+}
+
+.card-block {
+  .tab-content {
+    margin-top: 0;
+    border: 0;
+  }
+}*/
+
+.sidebar-hidden {
+  .sidebar {
+    margin-left: - 500px;
+  }
+}
+
+.sidebar-hidden {
+    .main, .app-footer {
+      margin-left: 0;
+    }
+  }
+
+.aside-menu-hidden {
+.aside-menu {
+  margin-right: - 10px;
+}
+}
+.aside-menu-fixed {
+.aside-menu-hidden {
+  .main, .app-footer {
+    margin-right: 0;
+  }
+}
+
+}
+/*body {
+margin: 0;
+padding: 0;
+background: rgb(0, 0, 0);
+}*/
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+background-color: rgb(0, 0, 0);
+overflow: hidden;
+//width: 100;
+//flex: 1000 1000 50px;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: rgb(240, 229, 229);
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: rgb(168, 125, 39);
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: rgb(168, 125, 39);
+color: rgb(3, 3, 3);
+}
+
+/*.panel-default > .panel-heading {
+color: #000000;
+background-color: #6D6A6A;
+border-color: #131212;
+}*/
+
+
+.h1 { 
+display: block;
+font-size: 2em;
+margin-top: 0.67em;
+margin-bottom: 0.67em;
+margin-left: 0;
+margin-right: 0;
+font-weight: bold;
+//position: absolute;
+//left: 100px;
+//top: 150px;
+//font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+position: absolute;
+left: 380px;
+top: 250px;
+font-family: 'Arial', sans-serif		;
+font-size: 3.5em;
+font-weight: 500;
+color: #5e1b07;
+
+
+
+}
+h3{
+font-size:1.25em;
+}
+
+.jumbotron .row { 
+color: #efefef;
+background-color: rgba(157,52,99,0.7);
+width: 400%;
+height: 1px;
+}
+
+.jumbotron {
+flex: 0 20 50px;
+height:1px ; 
+width:1200px;
+left:15px ;
+top:533px;
+position: absolute;
+text-align:center;
+margin-top:-50px !important;
+margin-bottom:1px !important;
+background: rgb(235, 201, 108);
+opacity:0.7 ;
+}
+
+.footer{
+color: #1B1919;
+background-color: rgba(157,52,99,0.7);
+}

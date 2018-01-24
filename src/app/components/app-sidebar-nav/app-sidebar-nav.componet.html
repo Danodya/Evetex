@@ -1,0 +1,58 @@
+<div *ngIf="userType=='service_provider'?true:fasle">
+<div class ="upload_profile_pic">
+        <div class ="profilepic">
+            <img *ngIf="url.photodata==''?true:false" class ="rounded-circle"src ="http://www.recipublic.com/assets/empty_user-64c8b958119d4e6577491dc53c8b31df46f01db36f6b8b893534cb5cf0bd2b8a.png">
+                <img *ngIf="url.photodata !=''?true:false" src="data:image/PNG;base64,{{url.photodata}}" class ="rounded-circle">   
+        </div>
+   <div class="uploadFile">
+        <input id="file" class="inputfile" name="file" type="file" (change)="fileChangeEvent($event)" placeholder="" multiple/>
+           <span  class="icon-camera"></span> <label for="file" (click)="viewButton()">upload profile picture</label>
+   
+     </div>
+     
+        <div *ngIf ="isClickedButton"class ="buttonUpload">
+            <button type="button" class="btn btn-primary" (click)="uploadProfilePicture()">
+                    <i class="fa fa-star"></i>&nbsp;Upload picture
+                </button>
+               
+     </div>      
+         <div class ="uploadAdvatiesment">
+                <input id="file" class="inputfile" name="file" type="file" (change)="fileChangeEvent($event)" placeholder="" multiple/>
+                <span  class="icon-camera"></span> <label  (click)="viewButtonAdd()" for="file">add advertiesment</label>
+        </div> 
+
+        <div *ngIf ="isClickButtonAd"class ="buttonUpload">
+                
+                <button type="button" class="btn btn-primary" (click)="uploadAdd()">
+                        <i class="fa fa-star"></i>&nbsp;Upload
+                    </button>
+        </div>
+             
+                  
+</div>
+</div>
+
+<div class ="aboutWrapper">
+
+<div class  ="aboutLebel">
+       <span  class="icon-camera"></span> <label for="file"><a routerLink="/about">about</a></label>
+
+</div>
+</div>
+<div class ="aboutWrapper">
+                
+                <div class  ="aboutLebel">
+                       <span  class="icon-camera"></span> <label  for="file"><a routerLink="/myevent">My Event</a></label>
+                
+                </div>
+
+</div>
+<div class ="aboutWrapper">
+                
+                <div class  ="aboutLebel">
+                       <span  class="icon-camera"></span> <label  for="file"><a routerLink="/eventlogin">Go to Chat</a></label>
+                
+                </div>
+
+</div>
+

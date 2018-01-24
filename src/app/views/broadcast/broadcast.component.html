@@ -1,0 +1,76 @@
+<div class="col-sm-6 col-md-8 offset-2 ">
+  <div class="card bodyColor">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body AddPic">
+ <div class ="wrapper">
+          <div class=" col-md-4 offset-4 ">
+            <div class ="eventPicture">
+              
+                <img *ngIf ="eventTheam ==undifined?true:false" class ="imgclass img-thumbnail  " src="https://www.grupohpa.com/static/images/cms/default_image.png" alt="">
+              
+                  <img *ngIf ="eventTheam !=undifined?true:false" src="data:image/PNG;base64" class ="imgclass img-thumbnail">  
+          </div>
+
+          <div class ="upolad_event_picture">
+            <input id="file" class="inputfile"  name="file" type="file" (change)="fileChangeEvent($event)" placeholder="" />
+            <span  class="icon-camera"></span> <label for="file" >choose event picture</label>
+          </div>
+
+            </div>
+            <div class=" col-md-8 offset-2 ">
+             
+          
+                
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="name"><strong>event Name</strong></label>
+                      <input type="text"  [(ngModel)] ="broadcast.eventname"class="form-control" id="name" placeholder="">
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="name"><strong>event discriptions</strong></label>
+                      <textarea class="form-control" [(ngModel)] ="broadcast.eventdiscription"  id="exampleTextarea" placeholder="" rows="3"></textarea>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-12">
+                    
+
+                      <div class="form-group">
+                          <label for="name"><strong>Set date and time</strong></label>
+   
+                        </div>
+                      <input type="date" [value] = "_date" 
+                      (change) = "onDateChange($event.target.value)" />
+                      <input type="time" [value] = "_date" 
+                      (change) = "onTimeChange($event.target.value)" />
+                     
+                    
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="name"><strong>Choose Broadcast Type</strong></label>
+   
+                        </div>
+                      <select class="form-control" (change)="onSelect($event.target.value)" id="ccyear">
+                          <option *ngFor ="let eventType of EventTypes" value="{{eventType.eventtype}}">{{eventType.eventtype}}</option>
+                          
+                     
+                      </select>
+                    </div>
+                 
+          
+                  <div class ="upolad_event_picture">
+                      <span  class="icon-camera"></span> <label  (click)="uploadEvent()">Broadcast Event </label>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="isFiled">Some feelds are not fill</div>
+                    <div class="alert alert-primary" *ngIf="isSucces">successfully publish</div>
+            </div>
+    </div> 
+  </div>
+</div>
+</div>

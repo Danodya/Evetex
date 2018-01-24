@@ -1,0 +1,36 @@
+<div class="row">
+  
+   <div class="col-sm-6 offset-4">
+     <div class="card">
+       <div class="card-header">
+          <div *ngIf="userType =='service_provider'?true:fasle">
+        <h2 style="text-align:center;"><strong >Login chat</strong></h2> 
+         </div>
+         <div *ngIf="userType == 'organizer'?true:fasle">
+            <h2 style="text-align:center;"><strong >Login event</strong></h2> 
+             </div>
+       </div>
+       <div class="card-body">
+         <div class="form-group">
+           <label for="company"><strong>Event name</strong></label>
+           <input type="text" [(ngModel)]=" event.eventname" class="form-control" id="company" placeholder="event name">
+         </div>
+         <div class="form-group">
+           <label for="vat"><strong>password</strong></label>
+           <input type="password" [(ngModel)]="event.password" class="form-control" id="vat" placeholder="password">
+         </div>
+         
+           <div class="row">
+             <div class="col-sm-12">
+               <button type="button" class="btn btn-primary" (click)="loginEvent()">
+                 <i class="fa fa-star"></i>&nbsp;login event
+             </button>
+             </div>
+           </div>
+           <div class="alert alert-danger" *ngIf="isMember">You are not a member of this event</div>
+        
+         
+       </div>
+     </div>
+   </div><!--/.col-->
+ </div><!--/.row-->

@@ -1,0 +1,72 @@
+<ol class="breadcrumb">
+  
+  <!-- Breadcrumb Menu-->
+  <li class="breadcrumb-menu d-md-down-none">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <a class="btn" routerLink="/chat/chatlogin"><i class="icon-speech"></i></a>
+      <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+      <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Setting</a>
+    </div>
+  </li>
+</ol>
+
+<div class ="event">
+  <h1 style="text-align:center;">WEl COME TO {{eventname |  uppercase}}</h1> 
+
+</div>
+
+ <div class="col-sm-6 col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>ADD MEMBERS</h3>
+     
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="company"><strong>SEARCH</strong></label>
+        <input type="text" [(ngModel)]="organizername" class="form-control" id="company" (keyup)="valuechange($event)"placeholder="{{organizername}}">
+        <span class ="buttonStyle"><button type="button" class="btn btn-primary " (click)="addOrganizer(); _get();">
+        <i class="fa fa-star"></i>Upload
+      </button>
+    </span>
+          <div *ngFor ="let mem of OrganizerDtail | filter:organizername">
+         <div *ngIf ="showmembers">
+           <div class ="wrapp" (click)="selectorgaizer(mem.id,mem.name)">
+          <div class="d-inline-block ">
+             
+            <div class ="profilepic">
+              <img  src="data:image/PNG;base64,{{mem.profilepic}}" class ="rounded-circle profilepic"> 
+          </div>
+          </div>
+          <div class="d-inline-block memberName ">
+           <strong>{{mem.name}}</strong> 
+          </div>
+        </div>
+
+         </div>
+        
+            
+          </div>
+      </div>
+      <div class="alert alert-primary " *ngIf="isadd">success full add 
+        <i class="fa fa-window-close" aria-hidden="true" (click)="closeAleart()"></i></div>
+
+      </div>
+
+     
+  </div>
+
+ 
+</div><!--/.col-->
+  <div >
+     
+
+      <agm-map [latitude]="coordinats.lat" [longitude]="coordinats.lng" (mapClick)="mapClick($event)">
+          <agm-marker [latitude]="coordinats.lat" [longitude]="coordinats.lng"></agm-marker>
+      </agm-map>
+      
+    </div>
+
+
+
+

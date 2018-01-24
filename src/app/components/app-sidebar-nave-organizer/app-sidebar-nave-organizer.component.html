@@ -1,0 +1,47 @@
+<div class ="upload_profile_pic">
+    <div class ="profilepic">
+        <img *ngIf="url.photodata==''?true:false" class ="rounded-circle"src ="http://www.recipublic.com/assets/empty_user-64c8b958119d4e6577491dc53c8b31df46f01db36f6b8b893534cb5cf0bd2b8a.png">
+            <img *ngIf="url.photodata !=''?true:false" src="data:image/PNG;base64,{{url.photodata}}" class ="rounded-circle">   
+    </div>
+<div class="uploadFile">
+    <input id="file" class="inputfile" name="file" type="file" (change)="fileChangeEvent($event)" placeholder="" multiple/>
+       <span  class="icon-camera"></span> <label for="file" (click)="viewButton()">upload profile picture</label>
+
+ </div>
+ 
+    <div *ngIf ="isClickedButton"class ="buttonUpload">
+        <button type="button" class="btn btn-primary" (click)="uploadProfilePicture()">
+                <i class="fa fa-star"></i>&nbsp;Upload picture
+            </button>
+           
+ </div>      
+    
+
+    
+         
+              
+</div>
+
+<div class ="Event">
+    
+    <div class  ="EventLebel">
+           <span  class="icon-camera"></span> <label  for="file"><a routerLink="/mainevent">create  new Event</a></label>
+    
+    </div>
+
+</div>
+<div class ="Event">
+    
+    <div class  ="EventLebel">
+           <span  class="icon-camera"></span> <label  for="file"><a routerLink="/eventlogin">login event</a></label>
+    
+    </div>
+
+</div>
+<div class ="Event">
+    
+    <div class  ="EventLebel">
+           <span  class="icon-camera"></span> <label  for="file"><a routerLink="/broadcast">Broadcast</a></label>
+    
+    </div>
+   

@@ -1,0 +1,53 @@
+* {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    width: 100%;
+    min-height:100%;
+    background: #eee;
+    background-attachment: fixed;
+    background-size: cover; 
+    font-family: "Open Sans", sans-serif;
+}
+
+app-chatroom {
+    display: flex;
+    flex-direction: column;
+}
+
+app-navbar{
+    width: 100%;
+}
+
+app-chat-form{
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow: none;
+}
+.message {
+  display: block;
+  height: auto;
+}
+
+.chatHeaderWrapper {
+    height: 90px;
+    color: #222;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.37), 1px 2px 3px rgba(0,0,0,0.54);
+    z-index: 2;
+}
+
+.chatRoom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+router-outlet {
+    height:0;
+}

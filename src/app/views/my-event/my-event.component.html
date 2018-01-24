@@ -1,0 +1,91 @@
+<div class="col-sm-6 col-md-8 offset-2 ">
+    <div class="card bodyColor">
+      <div class="card-header">
+        
+      </div>
+      <div class="card-body AddPic">
+   <div class ="wrapper">
+            <div class=" col-md-4 offset-4 ">
+              <div class ="eventPicture">
+                
+                  <img *ngIf ="eventTheam ==undifined?true:false" class ="imgclass img-thumbnail  " src="https://www.grupohpa.com/static/images/cms/default_image.png" alt="">
+                
+                    <img *ngIf ="eventTheam !=undifined?true:false" src="data:image/PNG;base64" class ="imgclass img-thumbnail">  
+            </div>
+
+            <div class ="upolad_event_picture">
+              <input id="file" class="inputfile"  name="file" type="file" (change)="fileChangeEvent($event)" placeholder="" />
+              <span  class="icon-camera"></span> <label for="file" >choose event picture</label>
+            </div>
+
+              </div>
+              <div class=" col-md-8 offset-2 ">
+               
+            
+                  
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="name"><strong>event Name</strong></label>
+                        <input type="text"  [(ngModel)] ="event.eventname"class="form-control" id="name" placeholder="">
+                      </div>
+                      
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="name"><strong>event discriptions</strong></label>
+                        <textarea class="form-control" [(ngModel)] ="event.eventdiscription"  id="exampleTextarea" placeholder="" rows="3"></textarea>
+                      </div>
+                      
+                    </div>
+                  
+            
+                    <div class ="upolad_event_picture">
+                        <span  class="icon-camera"></span> <label  (click)="uploadEvent()">upload Event </label>
+                      </div>
+          
+              </div>
+      </div> 
+    </div>
+</div>
+</div>
+
+<!-- <div class=" event">
+  <div *ngFor = "let event of eventDetailArray">
+    <div class  ="eventWrapper" >
+  <div style="display:inline-block;" class=" eventImg">
+      <img  src="data:image/PNG;base64,{{event.eventtheam}}" class ="img-thumbnail img-responsive eventImg">
+  </div>
+  <div style="display:inline-block;" class=" eventbody ">
+    {{event.eventname}}
+   {{event.eventdiscription}}
+  </div>
+</div>
+  <br>
+  <br>
+</div>
+
+</div> -->
+<div class="span12">
+    
+            <!-- Changed from `hidden` to `auto`. -->
+            <div style="overflow:auto;width:100%;">
+    
+                <!-- This is the div that does the trick: -->
+                <div *ngFor = "let event of eventDetailArray">
+                <div style="" class= "eventWrapper">
+                  
+                    
+                        
+                <div style="display:inline-block;" class=" eventImg">
+                    <img  src="data:image/PNG;base64,{{event.eventtheam}}" class ="img-thumbnail img-responsive eventImg">
+                </div>
+                <div style="display:inline-block;" class=" eventbody ">
+                  <div class="eventname"><h3>{{event.eventname}}</h3></div>  
+                   <div class="eventDiscriptions"><p>{{event.eventdiscription}}</p></div> 
+                </div>
+              </div>
+                    </div>
+    
+                </div>
+    
+         

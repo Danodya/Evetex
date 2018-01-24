@@ -1,0 +1,58 @@
+<div class="mainContent">
+    <div class="userListWrapper">
+      <app-chat-userlist></app-chat-userlist>
+      
+    </div>
+    
+    <div #scroller class="feedWrapper picture">
+   <!-- <img  src ="../../../assets/img/rashan.jpg"> -->
+      <app-chat-feed></app-chat-feed>
+      
+    </div>
+
+
+    <div class="my-card col-md-2 ">
+      
+       
+        <div class="form-group inputclass">
+        
+          <input   type="text" [(ngModel)]="organizername" (keyup)="valuechange($event)" class="form-control" id="company" placeholder="Search...">
+        </div>
+      <div *ngFor ="let man of  SpProviderArray | filter:organizername">
+        <div *ngIf ="showmembers">
+            <div class ="wrapp" (click)=" selectorgaizer(man.id,man.name)" >
+            <table class="table table-responsive-sm table-hover table-outline mb-0">
+              <td>
+           
+            <div class="d-inline-block ">
+               
+              <div class ="profilepic">
+                <img  src="data:image/PNG;base64,{{man.profilepic}}" class ="rounded-circle profilepic"> 
+            </div>
+            </div>
+            <div class="d-inline-block memberName ">
+             <strong>{{man.name}}</strong> 
+            </div>
+          
+        </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class ="AddButton">
+    <button style="margin-bottom: 4px" (click)="addSelectedSpProvider()" class="btn btn-lg btn-flickr" type="button">
+        <span>Click   To   Add</span>
+      </button>
+    </div>
+     </div>
+   
+
+
+     
+    </div>
+    
+    <div class="chatFormWrapper">
+    <app-chat-form></app-chat-form>
+    </div>
+    
+    

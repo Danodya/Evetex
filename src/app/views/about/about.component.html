@@ -1,0 +1,123 @@
+<div *ngIf="userType=='service_provider'?true:fasle">
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-6 offset-3">
+        <div class="card cardMy">
+          <div class="card-header">
+            <strong><h1 style="text-align:center">About You</h1></strong>
+            
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="name"><strong>Name</strong></label>
+                  <input type="text"  [(ngModel)] ="editAbout.name"class="form-control" id="name" placeholder="{{editAbout.name}}">{{editAbout.name}}
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>email</strong></label>
+                  <input type="email"  [(ngModel)] ="editAbout.email" class="form-control" id="ccnumber" placeholder="{{editAbout.email}}">{{editAbout.email}}
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>Phone NUmber</strong></label>
+                  <input type="text" [(ngModel)] ="editAbout.phoneNumber" class="form-control" id="ccnumber" placeholder="{{editAbout.phoneNumber}}">
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>Address</strong></label>
+                  <textarea class="form-control"  [(ngModel)] ="editAbout.address" id="exampleTextarea" rows="3" placeholder="{{editAbout.address}}"></textarea>
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>Qualification</strong></label>
+                  <textarea class="form-control" [(ngModel)] ="editAbout.qualification"  id="exampleTextarea" placeholder="{{editAbout.qualification}}" rows="3"></textarea>
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>Expirence</strong></label>
+                  <textarea class="form-control" [(ngModel)] ="editAbout.expirience"  id="exampleTextarea" placeholder="{{editAbout.expirience}}" rows="3"></textarea>
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"><strong>Previous work</strong></label>
+                  <input type="text" class="form-control"  id="ccnumber" placeholder="Previous work">
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <button type="button" class="btn btn-primary" (click)="submitEdit()">
+                  <i class="fa fa-star"></i>&nbsp;Submit Your Edit
+              </button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div><!--/.col-->
+      
+    </div><!--/.row-->
+    
+</div>
+</div>
+
+<div class="container">
+ 
+  <table class=" col-md-12 table table-dark table-hover">
+    <thead>
+     
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Name</td>
+        <td>{{editAbout.name}}</td>
+        
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{editAbout.email}}</td>
+       
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td>{{editAbout.phoneNumber}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{editAbout.address}}</td>
+      </tr>
+      <tr>
+        <td>Qualification</td>
+        <td>{{editAbout.qualification}}</td>
+      </tr>
+      <tr>
+        <td>Expirience</td>
+        <td>{{editAbout.expirience}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

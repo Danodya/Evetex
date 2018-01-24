@@ -1,0 +1,24 @@
+<div class="navBar">
+    <div id="logo"></div>
+    <div id="heading"><a routerLink="/">basechat</a></div>
+  <div class="links">
+     
+    <span>
+      <a *ngIf="!(user|async)?.uid" routerLink="/chat/chatlogin" (click)="login()">Login</a>
+    </span>
+    <span>
+      <a *ngIf="!(user|async)?.uid" routerLink="/chat/chatSignup">Sign Up</a>
+    </span>
+    <span>
+      <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
+    </span>
+   
+    <span  *ngIf="userType == 'organizer'?true:fasle">
+        <a routerlink="/eventbody" (click)="goEvent()">Goevent</a> 
+       </span>
+  
+    <span>
+      <a *ngIf="(user|async)?.uid"  (click)="logout()">Logout</a>
+    </span>
+  </div>
+</div>

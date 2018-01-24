@@ -1,0 +1,35 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid rgb(16, 20, 2); /* green */
+  border: 5px solid rgb(210, 197, 236);
+
+  }
+  
+  .ng-invalid:not(form)  {
+    border: 5px solid #e44f4f; /* red */
+  }
+  input.ng-untouched{
+  border: 3px solid rgb(77, 153, 230)
+  
+  }
+  
+  input.ng-dirty{
+      background: rgb(233, 188, 188);
+      color: rgba(0, 6, 8, 0.938);
+  
+  }
+  .card{
+    
+        box-shadow: 1px 2px 4px rgba(235, 76, 76, 0.7);
+    }
+    .app{
+        
+    background-image:url(logedit.jpg);
+    background-image: opacity=0.02 ;
+        //background-color: rgb(52, 25, 102);
+    } 
+    .loginWrapp{
+
+background-color: rgb(224, 224, 192);
+
+    }
+   
